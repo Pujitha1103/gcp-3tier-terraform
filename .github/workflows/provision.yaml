@@ -1,5 +1,10 @@
 name: Terraform GCP 3-Tier
 
+# Required for google-github-actions/auth OIDC authentication
+permissions:
+  id-token: write
+  contents: read
+
 # Event triggers for workflow
 on:
   push:
