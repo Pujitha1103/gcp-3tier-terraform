@@ -14,6 +14,14 @@ resource "google_compute_instance_template" "app" {
     apt install -y nginx
     systemctl start nginx
   EOF
+
+  disk {
+    auto_delete  = true
+    boot         = true
+    source_image = "projects/debian-cloud/global/images/family/debian-11"
+    disk_type    = "pd-balanced"
+    disk_size_gb = 10
+  }
 }
 
 resource "google_compute_instance_group_manager" "mig" {
