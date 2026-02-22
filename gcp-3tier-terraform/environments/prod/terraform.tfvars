@@ -1,0 +1,5 @@
+project_id = "your-prod-project-id"
+region    = "asia-south1"
+zone      = "asia-south1-a"
+db_user   = "produser"
+db_pass   = "prodpassword"
