@@ -150,8 +150,7 @@ Security Principle: **Least Privilege Access**
     │   └── backend.tf
     │
     ├── environments/
-    │   ├── dev/
-    │   └── prod/
+    │   └── dev/
     │
     ├── modules/
     │   ├── network/
