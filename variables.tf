@@ -25,14 +25,14 @@ variable "zone" {
   }
 }
 
-variable "db_user" {
+variable "db-user-v2" {
   description = "Database username"
   type        = string
   sensitive   = true
   nullable    = false
 }
 
-variable "db_pass" {
+variable "db-pass-v2" {
   description = "Database password"
   type        = string
   sensitive   = true

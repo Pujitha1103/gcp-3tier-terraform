@@ -13,13 +13,13 @@ variable "zone" {
   type        = string
 }
 
-variable "db_user" {
+variable "db-user-v2" {
   description = "Database username"
   type        = string
   sensitive   = true
 }
 
-variable "db_pass" {
+variable "db-pass-v2" {
   description = "Database password"
   type        = string
   sensitive   = true

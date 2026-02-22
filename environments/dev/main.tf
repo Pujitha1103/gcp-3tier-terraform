@@ -1,6 +1,6 @@
 module "network" {
-  source  = "../../modules/network"
-  region  = var.region
+  source = "../../modules/network"
+  region = var.region
 }
 
 module "firewall" {
@@ -14,16 +14,15 @@ module "nat" {
   network_id = module.network.vpc_id
 }
 
-module "service_accounts" {
-  source = "../../modules/service_accounts"
-}
+# Removed service_accounts module - the service account for Terraform 
+# is already created and configured in GCP for GitHub Actions
 
 module "cloudsql" {
   source     = "../../modules/cloudsql"
   region     = var.region
   network_id = module.network.vpc_id
-  db_user    = "devuser" # Or reference from secret if needed
-  db_pass    = null # Will be generated in module
+  db-user-v2 = var.db-user-v2 # Or reference from secret if needed
+  db-pass-v2 = var.db-pass-v2 # Will be generated in module
 }
 
 module "mig" {

@@ -1,5 +1,5 @@
 resource "google_compute_instance_template" "app" {
-  name_prefix  = "app-template"
+  name_prefix  = "app-template-v2-"
   machine_type = "e2-medium"
 
   tags = ["web", "app"]
@@ -25,8 +25,8 @@ resource "google_compute_instance_template" "app" {
 }
 
 resource "google_compute_instance_group_manager" "mig" {
-  name               = "app-mig"
-  base_instance_name = "app"
+  name               = "app-mig-v2"
+  base_instance_name = "app-v2"
   zone               = var.zone
   version {
     instance_template = google_compute_instance_template.app.id
@@ -35,7 +35,7 @@ resource "google_compute_instance_group_manager" "mig" {
 }
 
 resource "google_compute_autoscaler" "autoscaler" {
-  name   = "app-autoscaler"
+  name   = "app-autoscaler-v2"
   zone   = var.zone
   target = google_compute_instance_group_manager.mig.id
 

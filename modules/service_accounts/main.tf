@@ -1,6 +1,6 @@
 resource "google_service_account" "terraform" {
-  account_id   = "terraform-deployer"
-  display_name = "Terraform Deployer Service Account"
+  account_id   = "terraform-deployer-v2"
+  display_name = "Terraform Deployer Service Account V2"
 }
 
 # Assign required IAM roles to the service account

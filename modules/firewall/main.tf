@@ -1,5 +1,5 @@
 resource "google_compute_firewall" "allow_http" {
-  name    = "allow-http"
+  name    = "allow-http-v2"
   network = var.network
 
   allow {
@@ -12,7 +12,7 @@ resource "google_compute_firewall" "allow_http" {
 }
 
 resource "google_compute_firewall" "allow_internal" {
-  name    = "allow-internal"
+  name    = "allow-internal-v2"
   network = var.network
 
   allow {
